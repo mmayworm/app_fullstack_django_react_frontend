@@ -2,7 +2,7 @@
 // os dados do usuário que serão buscados.
 // Crie um elemento input com o tipo "text" e vincule seu value a uma variável de estado.
 // Use o evento onChange no input para disparar uma função que irá atualizar o valor do input no estado.
-const apiUrl = import.meta.env.VITE_API_URL;
+//const apiUrl = import.meta.env.VITE_API_URL;
 import { useState, useEffect } from 'react'
 
 const Home = () => {
@@ -17,7 +17,7 @@ const handleSearch = (event)=> {
 }
 
 const get_dados = async () => {
-        const response = await fetch(`${apiUrl}/person/`)
+        const response = await fetch('mmayworm.pythonanywhere.com/person/')
         const responsePersonList = await response.json()
         const dados = responsePersonList.map(person=>person.profissao)
         const dadosSet = new Set(dados);
@@ -28,7 +28,7 @@ const get_dados = async () => {
 }        
 
 const fetchHome = async () => {
-        const response = await fetch(`${apiUrl}/person/`)
+        const response = await fetch('mmayworm.pythonanywhere.com/person/')
         const responsePersonList = await response.json()
         const pesquisa = responsePersonList.filter((person=>person.profissao.includes(search)))
         setProfissional(pesquisa)
