@@ -1,4 +1,4 @@
-const apiUrl = import.meta.env.VITE_API_URL;
+//const apiUrl = import.meta.env.VITE_API_URL;
 import {useEffect, useState} from 'react'
 // import users from './assets/users.png'
 
@@ -7,7 +7,7 @@ const PersonList = () => {
     // const imagePath = './assets/users.png'
 
     const fetchPersonList = async () => {
-        const response = await fetch(`${apiUrl}/person/`)
+        const response = await fetch('mmayworm.pythonanywhere.com/person/')
         const responsePersonList = await response.json()        
         setPersonList(responsePersonList)
         console.log(personList)
