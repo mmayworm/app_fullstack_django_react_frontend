@@ -17,7 +17,7 @@ const handleSearch = (event)=> {
 }
 
 const get_dados = async () => {
-        const response = await fetch('mmayworm.pythonanywhere.com/person/')
+        const response = await fetch('https://mmayworm.pythonanywhere.com/person/')
         const responsePersonList = await response.json()
         const dados = responsePersonList.map(person=>person.profissao)
         const dadosSet = new Set(dados);
@@ -28,7 +28,7 @@ const get_dados = async () => {
 }        
 
 const fetchHome = async () => {
-        const response = await fetch('mmayworm.pythonanywhere.com/person/')
+        const response = await fetch('https://mmayworm.pythonanywhere.com/person/')
         const responsePersonList = await response.json()
         const pesquisa = responsePersonList.filter((person=>person.profissao.includes(search)))
         setProfissional(pesquisa)
