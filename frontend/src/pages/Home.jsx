@@ -65,7 +65,7 @@ useEffect(()=>{
                     <div>
                         
                           <div className ="w-48 md:w-64 lg:w-64  rounded overflow-hidden shadow-lg">
-                          <img  src={person.localizacao}  alt="Sunset in the mountains" className=' w-64 h-64  object-cover rounded-t-lg'/>
+                          <img  src={`${person.localizacao}.png`}  alt="Sunset in the mountains" className=' w-64 h-64  object-cover rounded-t-lg'/>
                           <div className ="px-6 py-4">
                             <div className ="font-bold text-xl mb-2">{person.name}</div> 
                             <p className ="text-gray-700 text-base">
